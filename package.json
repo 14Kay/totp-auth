@@ -1,0 +1,80 @@
+{
+  "name": "@14kay/totp-auth",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.4.0",
+  "description": "100% JS's TOTP authenticator with no dependencies",
+  "author": {
+    "name": "14K",
+    "url": "https://github.com/14Kay"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/14Kay/totp-auth#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/14Kay/totp-auth.git"
+  },
+  "bugs": "https://github.com/14Kay/totp-auth/issues",
+  "keywords": [
+    "TOTP",
+    "2FA",
+    "authenticator"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint .",
+    "publish": "npm version patch && npm publish --access public",
+    "minor": "npm version minor && npm publish --access public",
+    "major": "npm version major && npm publish --access public",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.6.4",
+    "@types/node": "^20.11.30",
+    "eslint": "^8.56.0",
+    "esno": "^4.0.0",
+    "pnpm": "^8.4.0",
+    "simple-git-hooks": "^2.9.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3",
+    "vitest": "^1.3.1",
+    "lint-staged": "^15.2.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
