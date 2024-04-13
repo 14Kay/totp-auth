@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: 14K
  * @Date: 2024-04-13 11:28:12
  * @LastEditTime: 2024-04-13 18:44:24
@@ -14,7 +14,6 @@
 
 100% JS's TOTP authenticator with <strong>no dependencies.</strong> You can use it in any javascript environment
 
-
 ## Quick Start
 
 ```bash
@@ -22,20 +21,20 @@ npm install @14kay/totp-auth --save
 ```
 
 ```js
-    import TOTPAuth from "@14kay/totp-auth"
+import TOTPAuth from '@14kay/totp-auth'
 
-    const secret = "JBSWY3DPEHPK3PXP"
-    const code = TOTPAuth.totp(secret) // 666666
+const secret = 'JBSWY3DPEHPK3PXP'
+const code = TOTPAuth.totp(secret) // 666666
 ```
 ### Get time remaining
 
 ```js
-    const timeRemaining = OTPAuth.timeRemaining() // 15
+const timeRemaining = OTPAuth.timeRemaining() // 15
 ```
 ### code Verify
 
 ```js
-    const isLegal = OTPAuth.totpVerify("123456") // true or false
+const isLegal = OTPAuth.totpVerify('123456') // true or false
 ```
 
 ## License
